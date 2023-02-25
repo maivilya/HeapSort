@@ -25,7 +25,14 @@ public class Main {
             return 0;
         }
     }
-
+    private static int[] toArray(List<String> l){
+        int length = l.size();
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            array[i] = convertToInt(l.get(i));
+        }
+        return array;
+    }
     private static boolean isDigit(char c){
         try{
             String s = String.valueOf(c);
