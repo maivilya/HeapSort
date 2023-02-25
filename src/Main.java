@@ -7,17 +7,17 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
         // Консольный вариант
-        /*int[] arr = fill(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
+        int[] arr = fill(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
         System.out.print("Unsorted array -> ");
         print(arr);
         heapSort(arr);
         System.out.print("Sorted array -> ");
-        print(arr);*/
+        print(arr);
+        System.out.println();
 
         // Вариант с файлом
         final String FILENAME = "src/input.txt";
         List<String> tempData = getDataFile(FILENAME);
-        System.out.println(tempData);
         int[] unsortedArray = toArray(tempData);
         System.out.print("Unsorted array -> ");
         print(unsortedArray);
