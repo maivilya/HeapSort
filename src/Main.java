@@ -1,8 +1,11 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
+    private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        int[] arr = fill(14, 1, 70);
+        int[] arr = fill(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
+        print(arr);
 
     }
 
@@ -26,6 +29,19 @@ public class Main {
             array[i] = random.nextInt((max - min) + 1) + min;
         }
         return array;
+    }
+
+    private static int getLengthTerminal(){
+        System.out.print("Enter length of the array: ");
+        return scanner.nextInt();
+    }
+    private static int getMinValueTerminal(){
+        System.out.print("Enter min value of the array: ");
+        return scanner.nextInt();
+    }
+    private static int getMaxValueTerminal(){
+        System.out.print("Enter max value of the array: ");
+        return scanner.nextInt();
     }
 }
 
