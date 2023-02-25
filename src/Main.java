@@ -1,14 +1,31 @@
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOError;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
-        int[] arr = fill(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
+    public static void main(String[] args) throws IOException {
+        // Консольный вариант
+        /*int[] arr = fill(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
         print(arr);
         heapSort(arr);
-        print(arr);
+        print(arr);*/
 
+        // Вариант с файлом
+        final String fileName = "src/input.txt";
+        String tempData = getDataFile(fileName);
+        System.out.println(tempData);
+    }
+
+
+    private static String getDataFile(String fileName) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        String res = br.readLine();
+        return res;
     }
 
     private static void heapSort(int[] array){
