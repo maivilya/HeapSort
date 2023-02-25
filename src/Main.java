@@ -128,17 +128,3 @@ public class Main {
         return scanner.nextInt();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
