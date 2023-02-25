@@ -1,31 +1,48 @@
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOError;
 import java.io.IOException;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
         // Консольный вариант
         /*int[] arr = fill(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
+        System.out.print("Unsorted array -> ");
         print(arr);
         heapSort(arr);
+        System.out.print("Sorted array -> ");
         print(arr);*/
 
         // Вариант с файлом
-        final String fileName = "src/input.txt";
-        String tempData = getDataFile(fileName);
-        System.out.println(tempData);
+        final String FILENAME = "src/input.txt";
+
+    }
+    private static int convertToInt(String s){
+        try{
+            return Integer.parseInt(s);
+        } catch (NumberFormatException e){
+            return 0;
+        }
     }
 
-
-    private static String getDataFile(String fileName) throws IOException {
+    private static boolean isDigit(char c){
+        try{
+            String s = String.valueOf(c);
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e){
+            return false;
+        }
+    }
+    private static List<String> getDataFile(String fileName) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(fileName));
-        String res = br.readLine();
-        return res;
+        List<String> listOfStrings = new ArrayList<>();
+        String line;
+        while((line = br.readLine()) != null){
+            listOfStrings.add(line);
+        }
+        return listOfStrings;
     }
 
     private static void heapSort(int[] array){
