@@ -16,7 +16,14 @@ public class Main {
 
         // Вариант с файлом
         final String FILENAME = "src/input.txt";
-
+        List<String> tempData = getDataFile(FILENAME);
+        System.out.println(tempData);
+        int[] unsortedArray = toArray(tempData);
+        System.out.print("Unsorted array -> ");
+        print(unsortedArray);
+        heapSort(unsortedArray);
+        System.out.print("Sorted array -> ");
+        print(unsortedArray);
     }
     private static int convertToInt(String s){
         try{
