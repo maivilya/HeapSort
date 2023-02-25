@@ -6,6 +6,17 @@ public class Main {
 
     }
 
+    private static void print(int[] arr) {
+        int length = arr.length;
+        System.out.print("[");
+        for (int i = 0; i < length; i++) {
+            if (i < length - 1) {
+                System.out.print(arr[i] + ", ");
+            } else {
+                System.out.print(arr[i] + "]");
+            }
+        }
+    }
 
 
     private static int[] fill(int len, int min, int max) {
