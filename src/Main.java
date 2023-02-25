@@ -6,7 +6,24 @@ public class Main {
     public static void main(String[] args) {
         int[] arr = fill(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
         print(arr);
+        heapSort(arr);
+        print(arr);
 
+    }
+
+    private static void heapSort(int[] array){
+        int length = array.length;
+
+        for (int i = length / 2 - 1; i >=0 ; i--) {
+            heapify(array, length, i);
+        }
+        for (int i = length - 1; i >=0 ; i--) {
+            int temp = array[0];
+            array[0] = array[i];
+            array[i] = temp;
+
+            heapify(array, i, 0);
+        }
     }
 
     private static void heapify(int[] arr, int n, int i){
@@ -36,9 +53,10 @@ public class Main {
             if (i < length - 1) {
                 System.out.print(arr[i] + ", ");
             } else {
-                System.out.print(arr[i] + "]");
+                System.out.print(arr[i]);
             }
         }
+        System.out.println("]");
     }
     private static int[] fill(int len, int min, int max) {
         int[] array = new int[len];
